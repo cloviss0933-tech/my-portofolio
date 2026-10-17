@@ -1,16 +1,21 @@
-// Fungsi untuk mengubah warna teks secara otomatis setiap 1 detik (1000 milidetik)
-setInterval(function () {
-    const pesan = document.getElementById('pesan');
-    
-    // Pastikan teks pesannya muncul
-    pesan.innerText = 'Teks ini berubah warna otomatis secara berkala!';
+// 1. Fungsi Tombol Interaktif
+let intervalWarna; // Variabel penampung interval
 
-    // Mengubah warna teks menjadi acak
-    const warnaAcak = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    pesan.style.color = warnaAcak;
+document.getElementById('btnClick').addEventListener('click', function () {
+    const pesan = document.getElementById('pesan');
+    pesan.innerText = 'haha gotchu :p';
     pesan.style.fontWeight = 'bold';
     pesan.style.fontSize = '20px';
-}, 1000); // Angka 1000 artinya 1 detik. Kamu bisa ganti (misal 500 untuk setengah detik)
+
+    // Mencegah interval jalan dobel kalau tombol diklik berkali-kali
+    clearInterval(intervalWarna);
+
+    // Otomatis ubah warna tiap 0.5 detik SETELAH diklik
+    intervalWarna = setInterval(function () {
+        const warnaAcak = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        pesan.style.color = warnaAcak;
+    }, 500); 
+});
 
 // 2. Fungsi Tombol Dark Mode (Berdiri Sendiri)
 const btnDarkMode = document.getElementById('btnDarkMode');
