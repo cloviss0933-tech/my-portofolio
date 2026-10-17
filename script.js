@@ -1,7 +1,7 @@
 // 1. Fungsi Tombol Interaktif (Click Me!)
 document.getElementById('btnClick').addEventListener('click', function () {
     const pesan = document.getElementById('pesan');
-    pesan.innerText = 'Teks ini warnanya berubah secara acak!';
+    pesan.innerText = 'haha gotchu :p';
     
     const warnaAcak = '#' + Math.floor(Math.random() * 16777215).toString(16);
     pesan.style.color = warnaAcak;
@@ -21,19 +21,3 @@ btnDarkMode.addEventListener('click', function() {
         btnDarkMode.innerText = '🌙 Dark Mode';
     }
 });
-
-// --- FUNGSI FORM KONTAK ---
-function kirimPesan(event) {
-    event.preventDefault(); // Mencegah halaman mereload otomatis
-
-    // Mengambil nilai input dari form
-    const nama = document.getElementById('nama').value;
-    const notif = document.getElementById('notifPesan');
-
-    // Menampilkan pesan sukses interaktif
-    notif.style.color = '#28a745';
-    notif.innerText = `Terima kasih, ${nama}! Pesanmu berhasil dikirim.`;
-
-    // Mengosongkan kembali form setelah dikirim
-    document.getElementById('formKontak').reset();
-}

@@ -409,3 +409,34 @@ body.dark-mode .site-footer {
     color: #aaa;
     border-top-color: #333;
 }
+
+/* ==========================================
+   8. MEDIA QUERY (RESPONSIF UNTUK HP / TABLET)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Mengubah layout 2 kolom menjadi 1 kolom yang menumpuk rapi ke bawah */
+    .container-layout {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .kolom-kiri, 
+    .kolom-kanan {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Penyesuaian ukuran font & padding agar pas di layar kecil */
+    header {
+        padding: 15px;
+    }
+
+    .card-box {
+        padding: 15px 18px;
+    }
+
+    /* Grid proyek menjadi 1 kolom ke bawah */
+    .proyek-grid {
+        grid-template-columns: 1fr;
+    }
+}
