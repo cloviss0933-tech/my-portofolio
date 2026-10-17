@@ -1,0 +1,411 @@
+/* ==========================================
+   1. RESET DASAR & GLOBAL STYLING
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    /* Transisi halus saat toggle Dark Mode */
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   2. LAYOUT DUA KOLOM (CONTAINER)
+   ========================================== */
+.container-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.kolom-kiri {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kolom-kanan {
+    flex: 2;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================================
+   3. GENERAL CARD BOX STYLING
+   ========================================== */
+.card-box {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-box h2, 
+.card-box h3 {
+    color: #007bff;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* ==========================================
+   4. SECTION PROFIL, BIODATA, SKILLS & HOBI
+   ========================================== */
+/* Profil */
+.profil-section {
+    text-align: center;
+}
+
+.foto-profil {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto-profil:hover {
+    transform: scale(1.08);
+}
+
+.sub-judul {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Biodata */
+.tabel-biodata {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.tabel-biodata td {
+    padding: 6px 2px;
+    vertical-align: top;
+}
+
+.tabel-biodata .label {
+    font-weight: bold;
+    width: 32%;
+}
+
+/* Keahlian / Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.skill-badge {
+    background-color: #e9ecef;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.skill-badge:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hobi */
+.daftar-hobi {
+    line-height: 1.8;
+    padding-left: 20px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   5. SECTION PROYEK, EDUCATION & SOSMED
+   ========================================== */
+/* Proyek */
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.proyek-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.proyek-card:hover {
+    transform: translateY(-4px);
+}
+
+.proyek-card h4 {
+    margin: 0 0 8px 0;
+    color: #333;
+}
+
+.proyek-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.tech-tag {
+    font-size: 11px;
+    background: #007bff;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.proyek-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.btn-proyek {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-proyek:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+/* Riwayat Pendidikan */
+.edu-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    transition: background-color 0.3s;
+}
+
+.edu-item h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.univ-nama {
+    margin: 0 0 4px 0;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.tahun-kuliah {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.deskripsi-kuliah {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Sosmed */
+.sosmed-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-sosmed {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-sosmed.github { background-color: #24292e; }
+.btn-sosmed.instagram { background-color: #e1306c; }
+
+.btn-sosmed:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* Quote Section */
+.quote-section {
+    text-align: center;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white !important;
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.quote-author {
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   6. TOMBOL ACTION BAWAH & FOOTER
+   ========================================== */
+.action-box-bottom {
+    width: 100%;
+    text-align: center;
+    margin: 30px auto 10px auto;
+}
+
+.action-box-bottom .button-group button {
+    margin: 5px;
+    padding: 10px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.action-box-bottom .button-group button:hover {
+    transform: translateY(-2px);
+}
+
+#btnDarkMode {
+    background-color: #343a40;
+    color: white;
+}
+
+#btnClick {
+    background-color: #28a745;
+    color: white;
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
+
+/* ==========================================
+   7. TEMA GELAP (DARK MODE)
+   ========================================== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #1f1f1f;
+}
+
+body.dark-mode .card-box {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.04);
+}
+
+body.dark-mode .card-box h2,
+body.dark-mode .card-box h3 {
+    color: #4dabf7;
+}
+
+body.dark-mode .sub-judul,
+body.dark-mode .proyek-card p,
+body.dark-mode .deskripsi-kuliah {
+    color: #aaa;
+}
+
+body.dark-mode .skill-badge {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+}
+
+body.dark-mode .skill-badge:hover {
+    background-color: #4dabf7;
+    color: #121212;
+}
+
+body.dark-mode .proyek-card,
+body.dark-mode .edu-item {
+    background: #282828;
+    border-left-color: #4dabf7;
+}
+
+body.dark-mode .proyek-card h4,
+body.dark-mode .edu-item h4 {
+    color: #fff;
+}
+
+body.dark-mode .univ-nama {
+    color: #4dabf7;
+}
+
+body.dark-mode .btn-proyek {
+    background-color: #20c997;
+    color: #121212;
+}
+
+body.dark-mode .btn-proyek:hover {
+    background-color: #1baa80;
+}
+
+body.dark-mode .quote-section {
+    background: linear-gradient(135deg, #1f3d5a, #0d1b2a);
+}
+
+body.dark-mode .site-footer {
+    color: #aaa;
+    border-top-color: #333;
+}
